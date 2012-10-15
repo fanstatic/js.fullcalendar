@@ -1,0 +1,3 @@
+recursive-include js/fullcalendar/resources *.*
+recursive-include js/fullcalendar *.txt
+include *.txt

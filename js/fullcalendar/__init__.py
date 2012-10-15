@@ -34,14 +34,14 @@ gcal_js = Resource(
 locales = {
     "de": Resource(
         library,
-        "fullcalendar/fullcalendar_de.js",
+        "fullcalendar_de.js",
         depends=[fullcalendar_js, ],
-        minified="fullcalendar/fullcalendar_de.min.js"),
+        minified="fullcalendar_de.min.js"),
     "en": Resource(
         library,
-        "fullcalendar/fullcalendar_en.js",
+        "fullcalendar_en.js",
         depends=[fullcalendar_js, ],
-        minified="fullcalendar/fullcalendar_en.min.js"),
+        minified="fullcalendar_en.min.js"),
 }
 
 css = Group([fullcalendar_css, fullcalendar_print_css, ])

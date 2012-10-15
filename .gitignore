@@ -1,0 +1,4 @@
+.long-description.html
+dist
+*.pyc
+*.egg-info

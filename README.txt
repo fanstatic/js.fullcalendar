@@ -1,8 +1,8 @@
 js.fullcalendar
-***************
+===============
 
 Introduction
-============
+------------
 
 This library packages `FullCalendar`_ for `fanstatic`_.
 

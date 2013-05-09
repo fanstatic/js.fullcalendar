@@ -26,7 +26,7 @@ setup(
     keywords='',
     author='Andreas Kaiser',
     author_email='disko@binary-punks.com',
-    url='https://github.com/disko/js.fullcalendar',
+    url='https://github.com/Kotti/js.fullcalendar',
     license='BSD',
     packages=find_packages(),
     namespace_packages=['js'],

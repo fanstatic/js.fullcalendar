@@ -1,6 +1,12 @@
 CHANGES
 =======
 
+1.6.4
+-----
+
+- Upgrade to upstream release 1.6.4
+
+
 1.5.4
 -----
 

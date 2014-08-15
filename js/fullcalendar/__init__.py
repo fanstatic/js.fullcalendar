@@ -42,6 +42,11 @@ locales = {
         "fullcalendar_en.js",
         depends=[fullcalendar_js, ],
         minified="fullcalendar_en.min.js"),
+    "fr": Resource(
+        library,
+        "fullcalendar_fr.js",
+        depends=[fullcalendar_js, ],
+        minified="fullcalendar_fr.min.js"),
 }
 
 css = Group([fullcalendar_css, fullcalendar_print_css, ])

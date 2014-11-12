@@ -33,8 +33,7 @@ fullcalendar = Group([css, fullcalendar_js])
 gcal_js = Resource(
     library,
     "gcal.js",
-    depends=[fullcalendar_js, ],
-    minified="gcal.min.js")
+    depends=[fullcalendar_js, ])
 
 locales = {
     "de": Resource(

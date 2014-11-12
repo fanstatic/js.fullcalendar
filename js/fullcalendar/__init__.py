@@ -1,9 +1,9 @@
-# -*- coding: utf-8 -*-
-
 from fanstatic import Group
 from fanstatic import Library
 from fanstatic import Resource
+from fanstatic.core import render_print_css
 from js.jquery import jquery
+from js.momentjs import moment
 
 
 library = Library("js.fullcalendar", "resources")
@@ -17,34 +17,39 @@ fullcalendar_print_css = Resource(
     library,
     "fullcalendar.print.css",
     depends=[fullcalendar_css, ],
-    minified="fullcalendar.print.min.css")
+    renderer=render_print_css)
+
+css = Group([fullcalendar_css, fullcalendar_print_css, ])
 
 fullcalendar_js = Resource(
     library,
     "fullcalendar.js",
-    depends=[jquery, ],
+    depends=[jquery, moment],
     minified="fullcalendar.min.js")
 
+fullcalendar = Group([css, fullcalendar_js])
+
+# Optional.
 gcal_js = Resource(
     library,
     "gcal.js",
-    depends=[fullcalendar_js, ],
-    minified="gcal.min.js")
+    depends=[fullcalendar_js, ])
 
 locales = {
     "de": Resource(
         library,
-        "fullcalendar_de.js",
-        depends=[fullcalendar_js, ],
-        minified="fullcalendar_de.min.js"),
-    "en": Resource(
+        "lang/de.js",
+        depends=[fullcalendar_js, ]),
+    "fr": Resource(
         library,
-        "fullcalendar_en.js",
-        depends=[fullcalendar_js, ],
-        minified="fullcalendar_en.min.js"),
+        "lang/fr.js",
+        depends=[fullcalendar_js, ]),
+    "nl": Resource(
+        library,
+        "lang/nl.js",
+        depends=[fullcalendar_js, ]),
+    "es": Resource(
+        library,
+        "lang/es.js",
+        depends=[fullcalendar_js, ]),
 }
-
-css = Group([fullcalendar_css, fullcalendar_print_css, ])
-js = Group([fullcalendar_js, gcal_js, ])
-
-fullcalendar = Group([css, js, ])

@@ -2,3 +2,7 @@
 dist
 *.pyc
 *.egg-info
+.installed.cfg
+bin
+develop-eggs
+eggs

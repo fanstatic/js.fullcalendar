@@ -4,7 +4,7 @@ from setuptools import find_packages
 from setuptools import setup
 import os
 
-version = '1.6.4'
+version = '2.1.1'
 
 
 def read(*rnames):
@@ -35,6 +35,7 @@ setup(
     install_requires=[
         'fanstatic',
         'js.jquery',
+        'js.momentjs',
         'setuptools',
         ],
     entry_points={

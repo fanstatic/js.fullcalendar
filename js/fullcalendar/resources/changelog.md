@@ -1,4 +1,88 @@
 
+v2.2.5 (2014-12-30)
+-------------------
+
+- `buttonText` specified for custom views via the `view` option
+	- bugfix: wrong default value, couldn't override default
+	- feature: default value taken from locale
+
+
+v2.2.4 (2014-12-29)
+-------------------
+
+- Arbitrary durations for basic/agenda views with the `views` option ([692])
+- Specify view-specific options using the `views` option. fixes [2283]
+- Deprecate view-option-hashes
+- Formalize and expose View API ([1055])
+- updateEvent method, more intuitive behavior. fixes [2194]
+
+[692]: https://code.google.com/p/fullcalendar/issues/detail?id=692
+[2283]: https://code.google.com/p/fullcalendar/issues/detail?id=2283
+[1055]: https://code.google.com/p/fullcalendar/issues/detail?id=1055
+[2194]: https://code.google.com/p/fullcalendar/issues/detail?id=2194
+
+
+v2.2.3 (2014-11-26)
+-------------------
+
+- removeEventSource with Google Calendar object source, would not remove ([2368])
+- Events with invalid end dates are still accepted and rendered ([2350], [2237], [2296])
+- Bug when rendering business hours and navigating away from original view ([2365])
+- Links to Google Calendar events will use current timezone ([2122])
+- Google Calendar plugin works with timezone names that have spaces
+- Google Calendar plugin accepts person email addresses as calendar IDs
+- Internally use numeric sort instead of alphanumeric sort ([2370])
+
+[2368]: https://code.google.com/p/fullcalendar/issues/detail?id=2368
+[2350]: https://code.google.com/p/fullcalendar/issues/detail?id=2350
+[2237]: https://code.google.com/p/fullcalendar/issues/detail?id=2237
+[2296]: https://code.google.com/p/fullcalendar/issues/detail?id=2296
+[2365]: https://code.google.com/p/fullcalendar/issues/detail?id=2365
+[2122]: https://code.google.com/p/fullcalendar/issues/detail?id=2122
+[2370]: https://code.google.com/p/fullcalendar/issues/detail?id=2370
+
+
+v2.2.2 (2014-11-19)
+-------------------
+
+- Fixes to Google Calendar API V3 code
+	- wouldn't recognize a lone-string Google Calendar ID if periods before the @ symbol
+	- removeEventSource wouldn't work when given a Google Calendar ID
+
+
+v2.2.1 (2014-11-19)
+-------------------
+
+- Migrate Google Calendar plugin to use V3 of the API ([1526])
+
+[1526]: https://code.google.com/p/fullcalendar/issues/detail?id=1526
+
+
+v2.2.0 (2014-11-14)
+-------------------
+
+- Background events. Event object's `rendering` property ([144], [1286])
+- `businessHours` option ([144])
+- Controlling where events can be dragged/resized and selections can go ([396], [1286], [2253])
+	- `eventOverlap`, `selectOverlap`, and similar
+	- `eventConstraint`, `selectConstraint`, and similar
+- Improvements to dragging and dropping external events ([2004])
+	- Associating with real event data. used with `eventReceive`
+	- Associating a `duration`
+- Performance boost for moment creation
+	- Be aware, FullCalendar-specific methods now attached directly to global moment.fn
+	- Helps with [issue 2259][2259]
+- Reintroduced forgotten `dropAccept` option ([2312])
+
+[144]: https://code.google.com/p/fullcalendar/issues/detail?id=144
+[396]: https://code.google.com/p/fullcalendar/issues/detail?id=396
+[1286]: https://code.google.com/p/fullcalendar/issues/detail?id=1286
+[2004]: https://code.google.com/p/fullcalendar/issues/detail?id=2004
+[2253]: https://code.google.com/p/fullcalendar/issues/detail?id=2253
+[2259]: https://code.google.com/p/fullcalendar/issues/detail?id=2259
+[2312]: https://code.google.com/p/fullcalendar/issues/detail?id=2312
+
+
 v2.1.1 (2014-08-29)
 -------------------
 

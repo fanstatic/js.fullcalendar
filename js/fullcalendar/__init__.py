@@ -27,6 +27,11 @@ fullcalendar_js = Resource(
     depends=[jquery, moment],
     minified="fullcalendar.min.js")
 
+lang_all_js = Resource(
+    library,
+    "lang-all.js",
+    depends=[fullcalendar_js])
+
 fullcalendar = Group([css, fullcalendar_js])
 
 # Optional.
@@ -35,21 +40,14 @@ gcal_js = Resource(
     "gcal.js",
     depends=[fullcalendar_js, ])
 
-locales = {
-    "de": Resource(
+locales = {}
+
+for lang in ('ar-ma', 'ar-sa', 'ar', 'bg', 'ca', 'cs', 'da', 'de-at', 'de',
+             'el', 'en-au', 'en-ca', 'en-gb', 'es', 'fa', 'fi', 'fr-ca', 'fr',
+             'hi', 'hr', 'hu', 'id', 'is', 'it', 'ja', 'ko', 'lt', 'lv', 'nl',
+             'pl', 'pt-br', 'pt', 'ro', 'ru', 'sk', 'sl', 'sr-cyrl', 'sr',
+             'sv', 'th', 'tr', 'uk', 'vi', 'zh-cn', 'zh-tw'):
+    locales[lang] = Resource(
         library,
-        "lang/de.js",
-        depends=[fullcalendar_js, ]),
-    "fr": Resource(
-        library,
-        "lang/fr.js",
-        depends=[fullcalendar_js, ]),
-    "nl": Resource(
-        library,
-        "lang/nl.js",
-        depends=[fullcalendar_js, ]),
-    "es": Resource(
-        library,
-        "lang/es.js",
-        depends=[fullcalendar_js, ]),
-}
+        "lang/{}.js".format(lang),
+        depends=[fullcalendar_js, ])

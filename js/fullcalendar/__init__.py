@@ -49,5 +49,5 @@ for lang in ('ar-ma', 'ar-sa', 'ar', 'bg', 'ca', 'cs', 'da', 'de-at', 'de',
              'sv', 'th', 'tr', 'uk', 'vi', 'zh-cn', 'zh-tw'):
     locales[lang] = Resource(
         library,
-        "lang/{}.js".format(lang),
+        "lang/{0}.js".format(lang),
         depends=[fullcalendar_js, ])

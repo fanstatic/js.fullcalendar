@@ -1,0 +1,26 @@
+{
+  "name": "js.fullcalendar",
+  "version": "2.3.1",
+  "description": "Fanstatic packaging of fullcalendar",
+  "main": "js/fullcalendar/resources/fullcalendar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kotti/js.fullcalendar.git"
+  },
+  "keywords": [
+    "fanstatic",
+    "fullcalendar"
+  ],
+  "author": "Andreas Kaiser",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/Kotti/js.fullcalendar/issues"
+  },
+  "homepage": "https://github.com/Kotti/js.fullcalendar",
+  "dependencies": {
+    "fullcalendar": "^2.3.1"
+  }
+}

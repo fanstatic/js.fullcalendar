@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from fanstatic import Group
 from fanstatic import Library
 from fanstatic import Resource
@@ -8,16 +6,16 @@ from js.jquery import jquery
 from js.momentjs import moment
 
 
-library = Library(u'js.fullcalendar', u'resources')
+library = Library('js.fullcalendar', 'resources')
 
 fullcalendar_css = Resource(
     library,
-    u'fullcalendar.css',
-    minified=u'fullcalendar.min.css')
+    'fullcalendar.css',
+    minified='fullcalendar.min.css')
 
 fullcalendar_print_css = Resource(
     library,
-    u'fullcalendar.print.css',
+    'fullcalendar.print.css',
     depends=[fullcalendar_css, ],
     renderer=render_print_css)
 
@@ -25,13 +23,13 @@ css = Group([fullcalendar_css, fullcalendar_print_css, ])
 
 fullcalendar_js = Resource(
     library,
-    u'fullcalendar.js',
+    'fullcalendar.js',
     depends=[jquery, moment],
-    minified=u'fullcalendar.min.js')
+    minified='fullcalendar.min.js')
 
 lang_all_js = Resource(
     library,
-    u'lang-all.js',
+    'lang-all.js',
     depends=[fullcalendar_js])
 
 fullcalendar = Group([css, fullcalendar_js])
@@ -39,18 +37,22 @@ fullcalendar = Group([css, fullcalendar_js])
 # Optional.
 gcal_js = Resource(
     library,
-    u'gcal.js',
+    'gcal.js',
     depends=[fullcalendar_js, ])
 
 locales = {}
 
-for lang in (u'ar-ma', u'ar-sa', u'ar', u'bg', u'ca', u'cs', u'da', u'de-at',
-             u'de', u'el', u'en-au', u'en-ca', u'en-gb', u'es', u'fa', u'fi',
-             u'fr-ca', u'fr', u'hi', u'hr', u'hu', u'id', u'is', u'it', u'ja',
-             u'ko', u'lt', u'lv', u'nl', u'pl', u'pt-br', u'pt', u'ro', u'ru',
-             u'sk', u'sl', u'sr-cyrl', u'sr', u'sv', u'th', u'tr', u'uk',
-             u'vi', u'zh-cn', u'zh-tw'):
+for lang in ('ar-ma.js', 'ar-sa.js', 'ar-tn.js', 'ar.js', 'bg.js',
+             'ca.js', 'cs.js', 'da.js', 'de-at.js', 'de.js', 'el.js',
+             'en-au.js', 'en-ca.js', 'en-gb.js', 'en-ie.js', 'en-nz.js',
+             'es.js', 'eu.js', 'fa.js', 'fi.js', 'fr-ca.js', 'fr-ch.js',
+             'fr.js', 'gl.js', 'he.js', 'hi.js', 'hr.js', 'hu.js',
+             'id.js', 'is.js', 'it.js', 'ja.js', 'ko.js', 'lb.js',
+             'lt.js', 'lv.js', 'nb.js', 'nl.js', 'nn.js', 'pl.js',
+             'pt-br.js', 'pt.js', 'ro.js', 'ru.js', 'sk.js', 'sl.js',
+             'sr-cyrl.js', 'sr.js', 'sv.js', 'th.js', 'tr.js', 'uk.js',
+             'vi.js', 'zh-cn.js', 'zh-tw.js', ):
     locales[lang] = Resource(
         library,
-        u'lang/{0}.js'.format(lang),
+        'lang/{0}'.format(lang),
         depends=[fullcalendar_js, ])

@@ -1,46 +1,43 @@
-# -*- coding: utf-8 -*-
-
 from setuptools import find_packages
 from setuptools import setup
 import os
 
-version = u'2.3.2-dev'
+version = '2.9.1.dev0'
 
 
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
+
 long_description = (
-    read(u'README.txt')
-    + u'\n' +
-    read(u'js', u'fullcalendar', u'test_fullcalendar.txt')
-    + u'\n' +
-    read(u'CHANGES.txt'))
+    read('README.txt') + '\n' +
+    read('js', 'fullcalendar', 'test_fullcalendar.txt') + '\n' +
+    read('CHANGES.txt'))
 
 setup(
-    name=u'js.fullcalendar',
+    name='js.fullcalendar',
     version=version,
     description="Fanstatic packaging of FullCalendar",
     long_description=long_description,
     classifiers=[],
-    keywords=u'',
-    author=u'Andreas Kaiser',
-    author_email=u'disko@binary-punks.com',
-    url=u'https://github.com/Kotti/js.fullcalendar',
-    license=u'BSD',
+    keywords='',
+    author='Andreas Kaiser',
+    author_email='disko@binary-punks.com',
+    url='https://github.com/Kotti/js.fullcalendar',
+    license='BSD',
     packages=find_packages(),
-    namespace_packages=[u'js'],
+    namespace_packages=['js'],
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        u'fanstatic',
-        u'js.jquery',
-        u'js.momentjs',
-        u'setuptools',
-        ],
+        'fanstatic',
+        'js.jquery>=1.7.1',
+        'js.momentjs>=2.5.0',
+        'setuptools',
+    ],
     entry_points={
-        u'fanstatic.libraries': [
-            u'fullcalendar = js.fullcalendar:library',
-            ],
-        },
-    )
+        'fanstatic.libraries': [
+            'fullcalendar = js.fullcalendar:library',
+        ],
+    },
+)
